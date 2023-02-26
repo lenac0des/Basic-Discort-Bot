@@ -76,8 +76,7 @@ client.on('messageCreate', (message) => {
 
 // call the client below
 // add a string inside the paraenthesis which is the token
-client.login('MTA3ODQ4MDk3NDY0MTM3NzM2MQ.GEYueL.BzrzW8CbwqwfBTAOYL5964IW1PVQmAnertxVKg'
-);
+client.login();
 
 // we have to run the file automatically
 // to do so npm install -g nodemon to install it globally
