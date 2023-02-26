@@ -10,6 +10,7 @@
     * - Author          : ellen
     * - Modification    : 
 **/
+require('dotenv').config();
 
 // destructure by creating an object for my bot
 // the reason for destructure is to import things inside 
