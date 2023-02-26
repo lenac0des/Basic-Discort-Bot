@@ -10,6 +10,7 @@
     * - Author          : ellen
     * - Modification    : 
 **/
+// adds your token to every file
 require('dotenv').config();
 
 // destructure by creating an object for my bot
@@ -77,7 +78,7 @@ client.on('messageCreate', (message) => {
 
 // call the client below
 // add a string inside the paraenthesis which is the token
-client.login();
+client.login(process.env.TOKEN);
 
 // we have to run the file automatically
 // to do so npm install -g nodemon to install it globally
@@ -85,3 +86,5 @@ client.login();
 // this will get our bot to go online
 //  add an event listner before the client
 //  securing my token with : npm install dotenv
+
+// start bot with nodemon
