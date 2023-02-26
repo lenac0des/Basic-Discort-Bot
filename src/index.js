@@ -68,7 +68,7 @@ client.on('messageCreate', (message) => {
 
     // getting the bot to reply to the user
     if (message.content === 'hello') {
-        message.reply('Was Good!');
+        message.reply('✨Hey!✨');
     }
 })
 
