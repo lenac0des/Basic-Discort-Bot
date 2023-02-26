@@ -48,7 +48,27 @@ client.on('ready', (c) => {
 // Create a new event listener that will create the bot's messages
 // this will trigger the bot everytime a user sends out a message
 // the intents above help make this event listner work
-client.on('messageCreate', )
+// use a call back function
+
+client.on('messageCreate', (message) => {
+    // this if statemnet helps the bot know the difference 
+    // btwn the user and itself
+    if (message.author.bot) {
+        return;
+    }
+
+    
+    
+    // refer to discord.js for documentation
+    // console.log(message.content);
+
+
+
+    // getting the bot to reply to the user
+    if (message.content === 'hello') {
+        message.reply('Was Good!');
+    }
+})
 
 
 // now log into the bot
