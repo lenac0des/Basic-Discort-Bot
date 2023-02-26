@@ -84,3 +84,4 @@ client.login('MTA3ODQ4MDk3NDY0MTM3NzM2MQ.GEYueL.BzrzW8CbwqwfBTAOYL5964IW1PVQmAne
 //  type in nodemon in terminal
 // this will get our bot to go online
 //  add an event listner before the client
+//  securing my token with : npm install dotenv
