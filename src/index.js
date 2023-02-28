@@ -73,6 +73,31 @@ client.on('messageCreate', (message) => {
 })
 
 
+
+
+///////////////////////////////////INTERACTIONS////////////////////////////////////////////////
+
+client.on('interactionCreate', (interaction) => {
+    if (!interaction.isChatInputCommand()) return;
+
+    if (interaction.commandName === 'hey') {
+        interaction.reply('✨Hey!✨');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // now log into the bot
 // the client is the bot instance
 
