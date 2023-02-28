@@ -82,6 +82,7 @@ client.on('interactionCreate', (interaction) => {
 
     if (interaction.commandName === 'add') {
         // string name has to match the string in te registered command file name
+        // add options so the app doen't crash 
         const num1 = interaction.options.get('first-number').value;
         const num2 = interaction.options.get('second-number').value;
         
