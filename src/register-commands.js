@@ -18,16 +18,33 @@ require('dotenv').config();
 
 
 // IMPORT THE DISCORD LIBRARY
-const { REST, Routes } = require('discord.js');
+const { REST, Routes, ApplicationCommandOptionType } = require('discord.js');
 
 //  define the slash commands as an array and add objects
+// commands with options
 const commands = [
-    {
-        name: 'hey',
-        description: 'Replies with hey!',
-    },
+  {
+    name: 'add',
+    description: 'Adds two numbers.',
+    options: [
+      {
+        name: 'first-number',
+        description: 'The first number.',
+        type: ApplicationCommandOptionType.Number,
+        required: true,
+      },
+      {
+        name: 'second-number',
+        description: 'The second number',
+        type: ApplicationCommandOptionType.Number,
+        required: true,
+      }
+    ]
 
+
+  }
 ];
+
 
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 

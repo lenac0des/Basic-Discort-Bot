@@ -80,8 +80,12 @@ client.on('messageCreate', (message) => {
 client.on('interactionCreate', (interaction) => {
     if (!interaction.isChatInputCommand()) return;
 
-    if (interaction.commandName === 'hey') {
-        interaction.reply('✨Hey!✨');
+    if (interaction.commandName === 'add') {
+        // string name has to match the string in te registered command file name
+        const num1 = interaction.options.get('first-number').value;
+        const num2 = interaction.options.get('second-number').value;
+        
+        interaction.reply(`The sum is ${num1 + num2}`);
     }
 });
 
