@@ -30,21 +30,25 @@ const client = new Client({
 const roles = [
     {
         id: '1080599282471682190',
-        label: 'Purple',
+        label: 'Moon Dust',
     },
     {
-        id: '1080599282471682190',
-        label: 'Purple',
+        id: '1080603142271549553',
+        label: 'Elixer',
     },
     {
-        id: '1080599282471682190',
-        label: 'Purple',
+        id: '1080606858118697144',
+        label: 'Iced Water ',
     },
 ]
 
 
-// c is for client
 client.on('ready', (c) => {
-    // this pulls up the bots usertag
-    console.log(`✨ ${c.user.tag} is aliveee...`);
+    try{
+
+    }catch (error){
+        console.log(error);
+    }
 });
+
+client.login(process.env.TOKEN);
