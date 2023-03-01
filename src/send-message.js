@@ -14,7 +14,7 @@
 
 require('dotenv').config();
 
-const {Client, IntentsBitField} = require('discord.js');
+const {Client, IntentsBitField, ActionRowBuilder} = require('discord.js');
 
 const client = new Client({
     intents: [
@@ -43,8 +43,26 @@ const roles = [
 ]
 
 
-client.on('ready', (c) => {
+client.on('ready', async (c) => {
     try{
+        // sends message to the channel
+        const channel = await client.channels.cache.get('1078493422991724595');
+        if (!channel) return;
+
+        // creates buttons for the role
+        // loop thru the roles array
+        const row = new ActionRowBuilder();
+        roles.forEach((role) => {
+            row.components.push(
+                new ButtonBuilder().setCustomId(role.id).setLabel(role.label).setStyle(ButtonStyle.Light)
+            )
+        })
+
+        await channel.send({
+            content: 'Claim or remove a role below.',
+            components: [row],
+        });
+        process.exit();
 
     }catch (error){
         console.log(error);
