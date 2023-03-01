@@ -17,7 +17,7 @@ require('dotenv').config();
 // the reason for destructure is to import things inside 
 // the curly braces into the discord package
 // the client is our bot
-const {Client, IntentsBitField} = require('discord.js');
+const {Client, IntentsBitField, EmbedBuilder} = require('discord.js');
 
 // create a new client 
 // instents is only required inside the new client object the rest are optional
@@ -80,13 +80,16 @@ client.on('messageCreate', (message) => {
 client.on('interactionCreate', (interaction) => {
     if (!interaction.isChatInputCommand()) return;
 
-    if (interaction.commandName === 'add') {
-        // string name has to match the string in te registered command file name
-        // add options so the app doen't crash 
-        const num1 = interaction.options.get('first-number').value;
-        const num2 = interaction.options.get('second-number').value;
+    if (interaction.commandName === 'embed') {
+        const embed = new EmbedBuilder()
+        .setTitle('Welcome to the Embed Test!')
+        .setDescription('This is a sample Embed.')
+        .setColor('Random')
+        .setImage('https://i.imgur.com/AfFp7pu.png');
         
-        interaction.reply(`The sum is ${num1 + num2}`);
+
+        interaction.reply({ embeds: [embed] });
+       
     }
 });
 
