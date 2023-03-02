@@ -43,7 +43,7 @@ client.on('ready', (c) => {
     console.log(`✨ ${c.user.tag} is aliveee...`);
 });
 
-
+// this is the logic for the roles
 client.on('interactionCreate', async (interaction) => {
     try {
       if (!interaction.isButton()) return;
@@ -56,7 +56,7 @@ client.on('interactionCreate', async (interaction) => {
         });
         return;
       }
-  
+    //   this is where the bot will remove roles if one was already added.
       const hasRole = interaction.member.roles.cache.has(role.id);
   
       if (hasRole) {
@@ -64,7 +64,7 @@ client.on('interactionCreate', async (interaction) => {
         await interaction.editReply(`The role ${role} has been removed.`);
         return;
       }
-  
+//   this is where bot will add roles that weren't assigned. 
       await interaction.member.roles.add(role);
       await interaction.editReply(`The role ${role} has been added.`);
     } catch (error) {
