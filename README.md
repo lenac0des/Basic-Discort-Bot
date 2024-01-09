@@ -1,1 +1,1 @@
-# Basic-Discort-Bot
+# Basic-Discord-Bot
